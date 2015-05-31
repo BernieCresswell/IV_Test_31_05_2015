@@ -26,7 +26,6 @@ namespace BGL_Test_CountofWords.Classes
             return prime.IsPrime(count);
         }
 
-        public string word { get; set; }
         public int count { get; set; }
         public bool isprime { get { return IsPrime(count); } }
     }

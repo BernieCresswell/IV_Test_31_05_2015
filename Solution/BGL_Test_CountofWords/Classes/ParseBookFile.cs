@@ -8,14 +8,17 @@ using System.Threading.Tasks;
 
 namespace BGL_Test_CountofWords.Classes
 {
-    class ParseBookFile:IParseBookFile
+    class ParseBookFile:IParseBookFile, IOutput
     {
-        
          IParseBookFile parseBook = null;
+         IOutput outputtype = null;
 
-         public ParseBookFile(IParseBookFile _ParseBookFile)  // inject the concrete class
+         private Dictionary<string, ParseBookFileResult> outputDictionary;
+
+         public ParseBookFile(IParseBookFile _ParseBookFile, IOutput _output)  // inject the concrete class
         {
             this.parseBook = _ParseBookFile;
+            this.outputtype = _output;
         }
 
          public ParseBookFile()
@@ -23,11 +26,17 @@ namespace BGL_Test_CountofWords.Classes
              // TODO: Complete member initialization
          }
 
-         public List<ParseBookFileResult> countWordsInFile(string file)
-        {
+         public Dictionary<string, ParseBookFileResult> countWordsInFile(string file)
+         {
+             outputDictionary = parseBook.countWordsInFile(file);
+             return outputDictionary;
+         }
 
-            return parseBook.countWordsInFile(file); ;
-        }
+
+         public void output(Dictionary<string, ParseBookFileResult> outputfile)
+         {
+             outputtype.output(outputfile);
+         }
     }
 
     

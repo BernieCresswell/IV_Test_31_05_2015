@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace BGL_Test_CountofWords.Classes
 {
-    public class ParseBookFileSplitForeach:IParseBookFile
+ 
+
+    public class ParseBookFileSplitForeach : IParseBookFile
     {
         private static char[] separators = { ' ' };
 
 
-        public List<ParseBookFileResult> countWordsInFile(string pathfile)
+        public Dictionary<string, ParseBookFileResult> countWordsInFile(string pathfile)
         {
-            //create the parser concrete for prime number checker
-            var ConcretePrimeChecker = new PrimeFromArray();
-
-            var wordCounts = new List<ParseBookFileResult>();
-            var wordCount = new ParseBookFileResult(ConcretePrimeChecker);
+            var wordCount = new Dictionary<string, ParseBookFileResult>();
+            var ConcretePrimeChecker = new PrimeFromFunction();
+            var ParserResult = new ParseBookFileResult(ConcretePrimeChecker);
 
             using (var fileStream = File.Open(pathfile, FileMode.Open, FileAccess.Read))
             using (var streamReader = new StreamReader(fileStream))
@@ -31,24 +31,24 @@ namespace BGL_Test_CountofWords.Classes
 
                     foreach (var word in words)
                     {
-                       var resultsobj = wordCounts.FirstOrDefault(x => x.word == word.ToString().ToLower());
 
-                        if (resultsobj == null)
-                        {
-                            wordCount.word = word.ToString().ToLower();
-                            wordCount.count = 1;
-                            wordCounts.Add(wordCount);
+                        if (!wordCount.ContainsKey(word.StripPunctuation().ToString().ToLower()))
+                        {   
+                           ParserResult = new ParseBookFileResult(ConcretePrimeChecker);
+                            ParserResult.count = 1;
+                            wordCount.Add(word.StripPunctuation().ToString().ToLower(), ParserResult);
+
                         }
                         else
-                        {
-                            resultsobj.count++;
+                            wordCount[word.StripPunctuation().ToString().ToLower()].count++;
                         }
                     }
                 }
-            }
+           
 
-            return wordCounts;
+            return wordCount;
         }
+
        
     }
 }

@@ -2,6 +2,9 @@
 using NUnit.Framework;
 using BGL_Test_CountofWords.Classes;
 using System.Linq;
+using System.IO;
+using System.Collections.Generic;
+using System.Text;
 
 namespace BGL_UnitTestProject
 {
@@ -19,9 +22,10 @@ namespace BGL_UnitTestProject
             var Parser = new ParseBookFileRegex();
 
             var testresult = Parser.countWordsInFile(filepath);
+         
 
             Assert.IsNotEmpty(testresult);
-            //Assert.True(testresult.Count == 5687);
+            Assert.True(testresult.Count == 5687);
         }
 
         [Test]
@@ -32,7 +36,7 @@ namespace BGL_UnitTestProject
             var testresult = Parser.countWordsInFile(filepath);
 
             Assert.IsNotEmpty(testresult);
-            //Assert.True(testresult.Count == 9614);
+            Assert.True(testresult.Count == 9614);
         }
 
         [Test]
@@ -69,7 +73,33 @@ namespace BGL_UnitTestProject
             }
 
         }
+        [Test]
+        public void WriteToFile()
+        {
 
+            StreamWriter writetext = new StreamWriter("write.txt", false);
+            StringBuilder builder;
+            
+            var Parser = new ParseBookFileSplitForeach();
+
+            var testresult = Parser.countWordsInFile(filepath);
+
+            foreach (var pair in testresult)
+            {
+                builder = new StringBuilder();
+                builder.Append(pair.Key);
+                builder.Append(",");
+                builder.Append(pair.Value.count);
+                builder.Append(",");
+                builder.Append(pair.Value.isprime);
+                writetext.WriteLine(builder);
+
+            }
+
+
+            writetext.Close();
+
+        }
        
     }
 }

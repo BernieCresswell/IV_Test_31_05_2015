@@ -9,6 +9,10 @@ namespace BGL_Test_CountofWords.Interfaces
 {
     interface IParseBookFile
     {
-        List<ParseBookFileResult> countWordsInFile(string file);
+        //List<ParseBookFileResult> countWordsInFile(string file);
+        //IDictionary<string, int> countWordsInFile(string file);
+        Dictionary<string, ParseBookFileResult> countWordsInFile(string file);
+        
+
     }
 }

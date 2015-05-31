@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Extensions.cs" />
+    <Compile Include="Classes\OutputCSV.cs" />
     <Compile Include="Classes\ParseBookFile.cs" />
     <Compile Include="Classes\ParseBookFileRegex.cs" />
     <Compile Include="Classes\ParseBookFileResults.cs" />

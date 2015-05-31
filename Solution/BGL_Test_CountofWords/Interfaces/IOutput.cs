@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BGL_Test_CountofWords.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace BGL_Test_CountofWords.Interfaces
 {
     interface IOutput
     {
-        void Output(Dictionary<string, int> outputDictionary);
+        void output(Dictionary<string, ParseBookFileResult> outputfile);
     }
 }

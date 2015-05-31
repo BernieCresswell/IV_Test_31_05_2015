@@ -17,14 +17,23 @@ namespace BGL_Test_CountofWords
             // do somestuff
 
             //create the parser concrete for regex
-            var ConcreteParserRegex = new ParseBookFileRegex();
-            var ParserRegex = new ParseBookFile(ConcreteParserRegex);
-            var ResultsParserRegex = ParserRegex.countWordsInFile(filepath);
+
+            //these are commented out as proved to be the slower code
+            //
+            //var ConcreteParserRegex = new ParseBookFileRegex();
+            //var ConcreteOutputRegex = new OutputCSV();
+            //var ParserRegex = new ParseBookFile(ConcreteParserRegex, ConcreteOutputRegex);
+            //var ResultsParserRegex = ParserRegex.countWordsInFile(filepath);
             
             //create the parser concrete for split
             var ConcreteParserSplit = new ParseBookFileSplitForeach();
-            var ParserSplit = new ParseBookFile(ConcreteParserSplit);
+            var ConcreteOutputSplit = new OutputCSV();
+            var ParserSplit = new ParseBookFile(ConcreteParserSplit, ConcreteOutputSplit);
             var ResultsParserSplit = ParserSplit.countWordsInFile(filepath);
+            ParserSplit.output(ResultsParserSplit);
+            Console.WriteLine("CSV file created");
+            Console.ReadLine();
+
         }
 
 

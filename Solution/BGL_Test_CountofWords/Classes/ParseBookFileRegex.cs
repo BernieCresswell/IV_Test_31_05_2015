@@ -11,37 +11,30 @@ namespace BGL_Test_CountofWords.Classes
     public class ParseBookFileRegex:IParseBookFile
     {
 
-        public List<ParseBookFileResult> countWordsInFile(string file)
+
+        public Dictionary<string, ParseBookFileResult> countWordsInFile(string file)
         {
-            //create the parser concrete for prime number checker
+            var wordCount = new Dictionary<string, ParseBookFileResult>();
+
             var ConcretePrimeChecker = new PrimeFromFunction();
-            var wordCount = new ParseBookFileResult(ConcretePrimeChecker);
-            var wordCounts = new List<ParseBookFileResult>();
+            var ParserResult = new ParseBookFileResult(ConcretePrimeChecker);
+
             var content = System.IO.File.ReadAllText(file);
 
             var wordPattern = new Regex(@"\w+");
 
             foreach (Match match in wordPattern.Matches(content))
             {
-
-                var resultobj = wordCounts.FirstOrDefault(x => x.word == match.Value.ToString().ToLower());
-
-                if (resultobj == null)
-                {
-                    wordCount = new ParseBookFileResult(ConcretePrimeChecker);
-                    wordCount.word = match.Value.ToString().ToLower();
-                    wordCount.count = 1;
-                    wordCounts.Add(wordCount);
+                if (!wordCount.ContainsKey(match.Value))
+                {   ParserResult = new ParseBookFileResult(ConcretePrimeChecker);
+                    ParserResult.count = 1;
+                    wordCount.Add(match.Value, ParserResult);
 
                 }
                 else
-                {
-                    resultobj.count = resultobj.count + 1;
+                    wordCount[match.Value].count++;
                 }
-              
-            }
-            return wordCounts;
+            return wordCount;
         }
-
     }
 }
