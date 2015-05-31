@@ -18,6 +18,11 @@ namespace BGL_Test_CountofWords.Classes
             this.parseBook = _ParseBookFile;
         }
 
+         public ParseBookFile()
+         {
+             // TODO: Complete member initialization
+         }
+
         public IDictionary<string, int> countWordsInFile(string file)
         {
 

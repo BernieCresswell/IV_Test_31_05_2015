@@ -2,6 +2,8 @@ C:\Users\bernie\Documents\GitHub\IV_Test_31_05_2015\Solution\BGL_UnitTestProject
 C:\Users\bernie\Documents\GitHub\IV_Test_31_05_2015\Solution\BGL_UnitTestProject\bin\Debug\BGL_UnitTestProject.pdb
 C:\Users\bernie\Documents\GitHub\IV_Test_31_05_2015\Solution\BGL_UnitTestProject\bin\Debug\nunit.framework.dll
 C:\Users\bernie\Documents\GitHub\IV_Test_31_05_2015\Solution\BGL_UnitTestProject\bin\Debug\nunit.framework.xml
-C:\Users\bernie\Documents\GitHub\IV_Test_31_05_2015\Solution\BGL_UnitTestProject\obj\Debug\BGL_UnitTestProject.csprojResolveAssemblyReference.cache
 C:\Users\bernie\Documents\GitHub\IV_Test_31_05_2015\Solution\BGL_UnitTestProject\obj\Debug\BGL_UnitTestProject.dll
 C:\Users\bernie\Documents\GitHub\IV_Test_31_05_2015\Solution\BGL_UnitTestProject\obj\Debug\BGL_UnitTestProject.pdb
+C:\Users\bernie\Documents\GitHub\IV_Test_31_05_2015\Solution\BGL_UnitTestProject\bin\Debug\BGL_Test_CountofWords.exe
+C:\Users\bernie\Documents\GitHub\IV_Test_31_05_2015\Solution\BGL_UnitTestProject\bin\Debug\BGL_Test_CountofWords.pdb
+C:\Users\bernie\Documents\GitHub\IV_Test_31_05_2015\Solution\BGL_UnitTestProject\obj\Debug\BGL_UnitTestProject.csprojResolveAssemblyReference.cache

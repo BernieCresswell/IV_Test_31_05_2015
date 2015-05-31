@@ -75,6 +75,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BGL_Test_CountofWords\BGL_Test_CountofWords.csproj">
+      <Project>{481d1833-cb9d-4428-ba23-47ec9e1ae440}</Project>
+      <Name>BGL_Test_CountofWords</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
