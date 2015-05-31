@@ -43,7 +43,12 @@
   <ItemGroup>
     <Compile Include="Classes\ParseBookFile.cs" />
     <Compile Include="Classes\ParseBookFileRegex.cs" />
+    <Compile Include="Classes\ParseBookFileResults.cs" />
     <Compile Include="Classes\ParseBookFileSplitForeach.cs" />
+    <Compile Include="Classes\PrimeArray.cs" />
+    <Compile Include="Classes\PrimeFromArray.cs" />
+    <Compile Include="Classes\PrimeFromFunction.cs" />
+    <Compile Include="Interfaces\IError.cs" />
     <Compile Include="Interfaces\IOutput.cs" />
     <Compile Include="Interfaces\IParseBookFile.cs" />
     <Compile Include="Interfaces\IPrime.cs" />
