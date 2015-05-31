@@ -7,38 +7,27 @@ using System.Threading.Tasks;
 
 namespace BGL_Test_CountofWords.Classes
 {
-    class ParseBookFileResults : IParseBookFile, IOutput, IError
-    {
 
-        IParseBookFile parseBook = null;
-        IOutput output = null;
-        IError error = null;
+
+    public class ParseBookFileResult: IPrime
         
+    {
+        IPrime prime = null;
 
-        public ParseBookFileResults(IParseBookFile _ParseBookFile, IOutput _output, IError _error)  // inject the concrete classes
+        public ParseBookFileResult(IPrime _prime)  // inject the concrete class
         {
-            this.parseBook = _ParseBookFile;
-            this.output = _output;
-            this.error = _error;
-            
+            this.prime = _prime;
+
         }
 
-        public IDictionary<string, int> countWordsInFile(string file)
+
+        public bool IsPrime(int number)
         {
-
-            return parseBook.countWordsInFile(file); ;
+            return prime.IsPrime(count);
         }
 
-        public void LogError(string message)
-        {// write some code 
-        }
-
-        public void Output(Dictionary<string, int> output)
-        {// write some code 
-        }
-
-        string word { get; set; }
-        int count { get; set; }
-        bool IsPrime { get; set; }
+        public string word { get; set; }
+        public int count { get; set; }
+        public bool isprime { get { return IsPrime(count); } }
     }
 }

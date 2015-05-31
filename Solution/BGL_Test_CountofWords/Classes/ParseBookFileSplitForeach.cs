@@ -11,11 +11,15 @@ namespace BGL_Test_CountofWords.Classes
     public class ParseBookFileSplitForeach:IParseBookFile
     {
         private static char[] separators = { ' ' };
-        
-       
-        public IDictionary<string, int> countWordsInFile(string pathfile)
+
+
+        public List<ParseBookFileResult> countWordsInFile(string pathfile)
         {
-            var wordCount = new Dictionary<string, int>();
+            //create the parser concrete for prime number checker
+            var ConcretePrimeChecker = new PrimeFromArray();
+
+            var wordCounts = new List<ParseBookFileResult>();
+            var wordCount = new ParseBookFileResult(ConcretePrimeChecker);
 
             using (var fileStream = File.Open(pathfile, FileMode.Open, FileAccess.Read))
             using (var streamReader = new StreamReader(fileStream))
@@ -27,19 +31,23 @@ namespace BGL_Test_CountofWords.Classes
 
                     foreach (var word in words)
                     {
-                        if (wordCount.ContainsKey(word.ToLower()))
+                       var resultsobj = wordCounts.FirstOrDefault(x => x.word == word.ToString().ToLower());
+
+                        if (resultsobj == null)
                         {
-                            wordCount[word.ToLower()] = wordCount[word.ToLower()] + 1;
+                            wordCount.word = word.ToString().ToLower();
+                            wordCount.count = 1;
+                            wordCounts.Add(wordCount);
                         }
                         else
                         {
-                            wordCount.Add(word.ToLower(), 1);
+                            resultsobj.count++;
                         }
                     }
                 }
             }
 
-            return wordCount;
+            return wordCounts;
         }
        
     }

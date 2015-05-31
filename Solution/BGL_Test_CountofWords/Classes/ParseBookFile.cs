@@ -23,7 +23,7 @@ namespace BGL_Test_CountofWords.Classes
              // TODO: Complete member initialization
          }
 
-        public IDictionary<string, int> countWordsInFile(string file)
+         public List<ParseBookFileResult> countWordsInFile(string file)
         {
 
             return parseBook.countWordsInFile(file); ;

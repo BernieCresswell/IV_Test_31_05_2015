@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BGL_Test_CountofWords.Interfaces
 {
-    interface IPrime
+    public interface IPrime
     {
         bool IsPrime(int number);
     }
