@@ -1,0 +1,5 @@
+C:\Users\bernie\Documents\GitHub\IV_Test_31_05_2015\Solution\BGL_IV_UnitTestProject\bin\Debug\BGL_IV_UnitTestProject.dll
+C:\Users\bernie\Documents\GitHub\IV_Test_31_05_2015\Solution\BGL_IV_UnitTestProject\bin\Debug\BGL_IV_UnitTestProject.pdb
+C:\Users\bernie\Documents\GitHub\IV_Test_31_05_2015\Solution\BGL_IV_UnitTestProject\obj\Debug\BGL_IV_UnitTestProject.csprojResolveAssemblyReference.cache
+C:\Users\bernie\Documents\GitHub\IV_Test_31_05_2015\Solution\BGL_IV_UnitTestProject\obj\Debug\BGL_IV_UnitTestProject.dll
+C:\Users\bernie\Documents\GitHub\IV_Test_31_05_2015\Solution\BGL_IV_UnitTestProject\obj\Debug\BGL_IV_UnitTestProject.pdb

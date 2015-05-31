@@ -1,0 +1,9 @@
+c:\users\bernie\documents\visual studio 2013\Projects\BGL_Test_CountofWords\BGL_Test_CountofWords\bin\Debug\BGL_Test_CountofWords.exe.config
+c:\users\bernie\documents\visual studio 2013\Projects\BGL_Test_CountofWords\BGL_Test_CountofWords\bin\Debug\BGL_Test_CountofWords.exe
+c:\users\bernie\documents\visual studio 2013\Projects\BGL_Test_CountofWords\BGL_Test_CountofWords\bin\Debug\BGL_Test_CountofWords.pdb
+c:\users\bernie\documents\visual studio 2013\Projects\BGL_Test_CountofWords\BGL_Test_CountofWords\obj\Debug\BGL_Test_CountofWords.csprojResolveAssemblyReference.cache
+c:\users\bernie\documents\visual studio 2013\Projects\BGL_Test_CountofWords\BGL_Test_CountofWords\obj\Debug\BGL_Test_CountofWords.exe
+c:\users\bernie\documents\visual studio 2013\Projects\BGL_Test_CountofWords\BGL_Test_CountofWords\obj\Debug\BGL_Test_CountofWords.pdb
+c:\users\bernie\documents\visual studio 2013\Projects\BGL_Test_CountofWords\BGL_Test_CountofWords\bin\Debug\nunit.framework.dll
+c:\users\bernie\documents\visual studio 2013\Projects\BGL_Test_CountofWords\BGL_Test_CountofWords\bin\Debug\nunit.framework.xml
+C:\Users\bernie\Documents\GitHub\IV_Test_31_05_2015\Solution\BGL_Test_CountofWords\obj\Debug\BGL_Test_CountofWords.csprojResolveAssemblyReference.cache
