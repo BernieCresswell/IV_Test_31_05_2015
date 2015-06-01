@@ -36,7 +36,7 @@ namespace BGL_UnitTestProject
             var testresult = Parser.countWordsInFile(filepath);
 
             Assert.IsNotEmpty(testresult);
-            Assert.True(testresult.Count == 9614);
+            Assert.True(testresult.Count == 5677);
         }
 
         [Test]
@@ -104,11 +104,4 @@ namespace BGL_UnitTestProject
     }
 }
   
-   // test for OutputsendToConsole
-
-   // test for OutputsendToCSV
-
-  
-
-   //Add testing of speed to each
 

@@ -14,27 +14,36 @@ namespace BGL_Test_CountofWords.Classes
 
         public Dictionary<string, ParseBookFileResult> countWordsInFile(string file)
         {
-            var wordCount = new Dictionary<string, ParseBookFileResult>();
-
-            var ConcretePrimeChecker = new PrimeFromFunction();
-            var ParserResult = new ParseBookFileResult(ConcretePrimeChecker);
-
-            var content = System.IO.File.ReadAllText(file);
-
-            var wordPattern = new Regex(@"\w+");
-
-            foreach (Match match in wordPattern.Matches(content))
+            try
             {
-                if (!wordCount.ContainsKey(match.Value))
-                {   ParserResult = new ParseBookFileResult(ConcretePrimeChecker);
-                    ParserResult.count = 1;
-                    wordCount.Add(match.Value, ParserResult);
+                var wordCount = new Dictionary<string, ParseBookFileResult>();
 
+                var ConcretePrimeChecker = new PrimeFromArray();
+                var ParserResult = new ParseBookFileResult(ConcretePrimeChecker);
+
+                var content = System.IO.File.ReadAllText(file);
+
+                var wordPattern = new Regex(@"\w+");
+
+                foreach (Match match in wordPattern.Matches(content))
+                {
+                    if (!wordCount.ContainsKey(match.Value))
+                    {
+                        ParserResult = new ParseBookFileResult(ConcretePrimeChecker);
+                        ParserResult.count = 1;
+                        wordCount.Add(match.Value, ParserResult);
+
+                    }
+                    else
+                        wordCount[match.Value].count++;
                 }
-                else
-                    wordCount[match.Value].count++;
-                }
-            return wordCount;
+                return wordCount;
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+            
         }
     }
 }

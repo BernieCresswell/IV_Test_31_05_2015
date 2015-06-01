@@ -30,10 +30,12 @@ namespace BGL_Test_CountofWords
             var ConcreteOutputSplit = new OutputCSV();
             var ParserSplit = new ParseBookFile(ConcreteParserSplit, ConcreteOutputSplit);
             var ResultsParserSplit = ParserSplit.countWordsInFile(filepath);
+            Console.WriteLine("File read");
             ParserSplit.output(ResultsParserSplit);
             Console.WriteLine("CSV file created");
+            Console.WriteLine("Press any key to exit");
             Console.ReadLine();
-
+            
         }
 
 

@@ -14,23 +14,30 @@ namespace BGL_Test_CountofWords.Classes
         
         public void output(Dictionary<string, ParseBookFileResult>  result)
         {
-            StreamWriter writetext = new StreamWriter("write.txt", false);
-            StringBuilder builder;
+            try {
+                StreamWriter writetext = new StreamWriter("write.txt", false);
+                StringBuilder builder;
 
-            var Parser = new ParseBookFileSplitForeach();
+                var Parser = new ParseBookFileSplitForeach();
 
-            foreach (var pair in result)
-            {
-                builder = new StringBuilder();
-                builder.Append(pair.Key);
-                builder.Append(",");
-                builder.Append(pair.Value.count);
-                builder.Append(",");
-                builder.Append(pair.Value.isprime);
-                writetext.WriteLine(builder);
+                foreach (var pair in result)
+                {
+                    builder = new StringBuilder();
+                    builder.Append(pair.Key);
+                    builder.Append(",");
+                    builder.Append(pair.Value.count);
+                    builder.Append(",");
+                    builder.Append(pair.Value.isprime);
+                    writetext.WriteLine(builder);
+                }
+                writetext.Close();
             }
-
-            writetext.Close();
+            catch(Exception e)
+            {
+                throw e;
+            }
+            
+            
 
         }
 
